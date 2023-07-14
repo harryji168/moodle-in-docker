@@ -24,6 +24,24 @@ $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
 
+// enable debuging, show all error message
+// @error_reporting(E_ALL | E_STRICT);
+// @ini_set('display_errors', '1');
+// $CFG->debug = (E_ALL | E_STRICT);
+// $CFG->debugdisplay = 1;
+
+// ignore the warning 
+// @error_reporting(E_ALL & ~E_WARNING);
+// @ini_set('display_errors', '1');
+// $CFG->debug = (E_ALL & ~E_WARNING);
+// $CFG->debugdisplay = 1;
+
+// ignore the warning and Deprecated
+@error_reporting(E_ALL & ~E_WARNING & ~E_DEPRECATED);
+@ini_set('display_errors', '1');
+$CFG->debug = (E_ALL & ~E_WARNING & ~E_DEPRECATED);
+$CFG->debugdisplay = 1;
+
 require_once(__DIR__ . '/lib/setup.php');
 
 // There is no php closing tag in this file,
