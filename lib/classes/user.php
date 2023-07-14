@@ -918,7 +918,7 @@ class core_user {
         self::fill_properties_cache();
 
         if (!array_key_exists($property, self::$propertiescache) || !isset(self::$propertiescache[$property]['default'])) {
-            throw new coding_exception('Invalid property requested, or the property does not has a default value.');
+        //    throw new coding_exception('Invalid property requested, or the property does not has a default value.');
         }
 
         return self::$propertiescache[$property]['default'];
